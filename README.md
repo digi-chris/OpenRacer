@@ -1,6 +1,8 @@
 # OpenRacer
 OpenRacer is an open-source initiative to build a high-quality racing simulation running in-browser.
 
+*Sorry! I know I said on the website that all the code is here, but I'm doing a fair amount of housekeeping with the code as I go, and it's taking longer than I thought. There's a lot to read through! It'll all be online as soon as possible.*
+
 It is released under the GPLv3 License.
 
 I'm just starting to upload the source code now - this may take a little while as I'm making some modifications as I go through each file.
