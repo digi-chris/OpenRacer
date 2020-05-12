@@ -1,0 +1,952 @@
+{
+	
+"path" : "",
+"ambient": { "r":0.1482353, "g":0.1692872, "b":0.2, "a":0.3686275 },
+"background": { "r":0.1921569, "g":0.3019608, "b":0.4745098, "a":0.01960784 },
+
+"textures": {
+	
+	"grass": { 
+		"file": "grass512.jpg"
+	},
+	
+	"fence01": { 
+		"file": "fence512.png"
+	},
+	
+	"buildings": { 
+		"file": "buildings512.jpg"
+	},
+	
+	"path01t": { 
+		"file": "path_tile256.jpg"
+	},
+	
+	"m_sky_blue": { 
+		"file": "sky1024.jpg"
+	},
+	
+	"buildings2": { 
+		"file": "buildings2_512.jpg"
+	},
+	
+	"road": { 
+		"file": "road512.jpg"
+	},
+        
+	"road-bump": { 
+		"file": "road-bump512.jpg"
+	},
+	
+	"ground": { 
+		"file": "ground2048.jpg"
+	},
+	
+	"track_tile": { 
+		"file": "track_tile256.jpg"
+	},
+	
+	"track01": { 
+		"file": "path_tile256.jpg"
+	},
+	
+	"horizon": { 
+		"file": "horizon512.png"
+	},
+	
+	"alpha": { 
+		"file": "alpha1024.png"
+	},
+	
+	"atlas": { 
+		"file": "atlas1024.jpg"
+	},
+	
+	"grasst": { 
+		"file": "grasst.png"
+	}
+
+},
+	
+"materials": {
+	
+	"clouds_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "m_sky_blue",
+                "parameters": { }
+	},
+	
+	"grass_tile_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "grasst"
+	},
+	
+	"road_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 30,
+		"textureTile": [ 1,200 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "road"
+	},
+	
+	"track_tile_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "track_tile"
+	},
+	
+	"horizon_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "horizon"
+	},
+	
+	"trees_tile_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "horizon"
+	},
+	
+	"path_tile_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "path01t"
+	},
+	
+	"atlas_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "atlas"
+	},
+	
+	"alpha_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "alpha"
+	},
+	
+	"buildings_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "buildings"
+	},
+	
+	"grass_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "grass"
+	},
+	
+	"buildings2_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "buildings2"
+	},
+	
+	"road_tile_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "track01"
+	},
+	
+	"fence_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "fence01"
+	},
+	
+	"ground_mat": { 
+		"type": "Phong",
+		"color": { "r":0, "g":0, "b":0, "a":0 },
+		"specularIntensity": 0,
+                "shininess": 0,
+		"textureTile": [ 1,1 ],
+		"textureOffset": [ 0,0 ],
+		"colorTexture": "ground"
+	}
+
+},
+
+"lights": {
+},
+
+"cameras": {
+},
+
+"transforms": [
+	
+	{
+		"uid": 1,
+                "name": "circuit_export",
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 2,
+                "name": "combined",
+		"parent": 1,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 3,
+                "name": "buildings",
+		"parent": 2,
+		"position": [ -29.99052,31.38762,33.75088 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "buildings_mat",
+		"mesh": "buildings"
+	},
+	
+	{
+		"uid": 4,
+                "name": "buildings2",
+		"parent": 2,
+		"position": [ 26.23379,14.75234,-219.0005 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "buildings2_mat",
+		"mesh": "buildings2"
+	},
+	
+	{
+		"uid": 5,
+                "name": "sectors_color",
+		"parent": 1,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 6,
+                "name": "alpha_color",
+		"parent": 5,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 7,
+                "name": "alpha0_color",
+		"parent": 6,
+		"position": [ -31.20983,27.05525,-117.3691 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha0_color"
+	},
+	
+	{
+		"uid": 8,
+                "name": "alpha1_color",
+		"parent": 6,
+		"position": [ -340.2191,6.794808,40.43159 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha1_color"
+	},
+	
+	{
+		"uid": 9,
+                "name": "alpha2_color",
+		"parent": 6,
+		"position": [ -339.4014,-0.9885569,436.2244 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha2_color"
+	},
+	
+	{
+		"uid": 10,
+                "name": "alpha3_color",
+		"parent": 6,
+		"position": [ -206.5256,-2.724821,512.626 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha3_color"
+	},
+	
+	{
+		"uid": 11,
+                "name": "alpha4_color",
+		"parent": 6,
+		"position": [ 33.70567,1.249088,342.0769 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha4_color"
+	},
+	
+	{
+		"uid": 12,
+                "name": "alpha5_color",
+		"parent": 6,
+		"position": [ 234.9132,9.695539,123.5714 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha5_color"
+	},
+	
+	{
+		"uid": 13,
+                "name": "alpha6_color",
+		"parent": 6,
+		"position": [ 350.434,24.11925,-370.0217 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha6_color"
+	},
+	
+	{
+		"uid": 14,
+                "name": "alpha7_color",
+		"parent": 6,
+		"position": [ 122.9199,27.61787,-505.2715 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "alpha_mat",
+		"mesh": "alpha7_color"
+	},
+	
+	{
+		"uid": 15,
+                "name": "atlas_color",
+		"parent": 5,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 16,
+                "name": "atlas0_color",
+		"parent": 15,
+		"position": [ -31.88368,17.14017,17.71205 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "atlas_mat",
+		"mesh": "atlas0_color"
+	},
+	
+	{
+		"uid": 17,
+                "name": "atlas1_color",
+		"parent": 15,
+		"position": [ -285.049,1.536187,67.65834 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "atlas_mat",
+		"mesh": "atlas1_color"
+	},
+	
+	{
+		"uid": 18,
+                "name": "atlas2_color",
+		"parent": 15,
+		"position": [ -281.9506,-7.571093,477.186 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "atlas_mat",
+		"mesh": "atlas2_color"
+	},
+	
+	{
+		"uid": 19,
+                "name": "atlas3_color",
+		"parent": 15,
+		"position": [ 87.85541,-4.980106,307.4716 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "atlas_mat",
+		"mesh": "atlas3_color"
+	},
+	
+	{
+		"uid": 20,
+                "name": "atlas4_color",
+		"parent": 15,
+		"position": [ 271.397,24.66957,-197.5038 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "atlas_mat",
+		"mesh": "atlas4_color"
+	},
+	
+	{
+		"uid": 21,
+                "name": "atlas5_color",
+		"parent": 15,
+		"position": [ 266.8443,28.54169,-534.3931 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "atlas_mat",
+		"mesh": "atlas5_color"
+	},
+	
+	{
+		"uid": 22,
+                "name": "atlas6_color",
+		"parent": 15,
+		"position": [ 133.7583,26.41154,-236.5804 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "atlas_mat",
+		"mesh": "atlas6_color"
+	},
+	
+	{
+		"uid": 23,
+                "name": "fence_color",
+		"parent": 5,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 24,
+                "name": "fence0_color",
+		"parent": 23,
+		"position": [ 266.3246,20.21468,-496.8292 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence0_color"
+	},
+	
+	{
+		"uid": 25,
+                "name": "fence1_color",
+		"parent": 23,
+		"position": [ 230.6017,10.13896,-198.0141 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence1_color"
+	},
+	
+	{
+		"uid": 26,
+                "name": "fence2_color",
+		"parent": 23,
+		"position": [ 204.7301,-1.176288,158.1434 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence2_color"
+	},
+	
+	{
+		"uid": 27,
+                "name": "fence3_color",
+		"parent": 23,
+		"position": [ -8.914658,-11.0068,384.1512 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence3_color"
+	},
+	
+	{
+		"uid": 28,
+                "name": "fence4_color",
+		"parent": 23,
+		"position": [ -287.1761,-15.05186,491.7696 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence4_color"
+	},
+	
+	{
+		"uid": 29,
+                "name": "fence5_color",
+		"parent": 23,
+		"position": [ -323.1516,-10.32582,249.8835 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence5_color"
+	},
+	
+	{
+		"uid": 30,
+                "name": "fence6_color",
+		"parent": 23,
+		"position": [ -307.0084,-1.710935,-1.129639 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence6_color"
+	},
+	
+	{
+		"uid": 31,
+                "name": "fence7_color",
+		"parent": 23,
+		"position": [ -82.90359,1.412251,-13.50458 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "fence_mat",
+		"mesh": "fence7_color"
+	},
+	
+	{
+		"uid": 32,
+                "name": "ground_color",
+		"parent": 5,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 33,
+                "name": "ground0_color",
+		"parent": 32,
+		"position": [ -165.8965,-1.172206,-54.58529 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground0_color"
+	},
+	
+	{
+		"uid": 34,
+                "name": "ground1_color",
+		"parent": 32,
+		"position": [ -320.6408,-6.342518,42.94239 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground1_color"
+	},
+	
+	{
+		"uid": 35,
+                "name": "ground2_color",
+		"parent": 32,
+		"position": [ -351.8593,-14.04916,391.4887 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground2_color"
+	},
+	
+	{
+		"uid": 36,
+                "name": "ground3_color",
+		"parent": 32,
+		"position": [ -221.2575,-14.50914,485.201 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground3_color"
+	},
+	
+	{
+		"uid": 37,
+                "name": "ground4_color",
+		"parent": 32,
+		"position": [ 41.81856,-11.98204,371.2361 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground4_color"
+	},
+	
+	{
+		"uid": 38,
+                "name": "ground5_color",
+		"parent": 32,
+		"position": [ 216.7689,-1.827767,127.8198 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground5_color"
+	},
+	
+	{
+		"uid": 39,
+                "name": "ground6_color",
+		"parent": 32,
+		"position": [ 262.5147,9.577799,-229.1071 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground6_color"
+	},
+	
+	{
+		"uid": 40,
+                "name": "ground7_color",
+		"parent": 32,
+		"position": [ 269.3744,20.12929,-562.7898 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground7_color"
+	},
+	
+	{
+		"uid": 41,
+                "name": "ground8_color",
+		"parent": 32,
+		"position": [ 121.3266,4.190433,-29.94152 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground8_color"
+	},
+	
+	{
+		"uid": 42,
+                "name": "ground_far_color",
+		"parent": 32,
+		"position": [ -152.6533,-6.385498,221.7875 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "ground_mat",
+		"mesh": "ground_far_color"
+	},
+	
+	{
+		"uid": 43,
+                "name": "sectors_lightmap",
+		"parent": 1,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 44,
+                "name": "grass",
+		"parent": 43,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 45,
+                "name": "grass0",
+		"parent": 44,
+		"position": [ -155.6545,1.699014,-63.20131 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass0"
+	},
+	
+	{
+		"uid": 46,
+                "name": "grass1",
+		"parent": 44,
+		"position": [ -326.4105,-7.6697,61.35758 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass1"
+	},
+	
+	{
+		"uid": 47,
+                "name": "grass2",
+		"parent": 44,
+		"position": [ -357.7848,-13.472,418.1216 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass2"
+	},
+	
+	{
+		"uid": 48,
+                "name": "grass3",
+		"parent": 44,
+		"position": [ -173.1638,-14.64024,510.3045 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass3"
+	},
+	
+	{
+		"uid": 49,
+                "name": "grass4",
+		"parent": 44,
+		"position": [ 73.75194,-11.82388,361.3363 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass4"
+	},
+	
+	{
+		"uid": 50,
+                "name": "grass5",
+		"parent": 44,
+		"position": [ 162.3374,-0.665778,113.4594 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass5"
+	},
+	
+	{
+		"uid": 51,
+                "name": "grass6",
+		"parent": 44,
+		"position": [ 215.862,9.152451,-196.0652 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass6"
+	},
+	
+	{
+		"uid": 52,
+                "name": "grass7",
+		"parent": 44,
+		"position": [ 262.7361,18.6502,-548.0096 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass7"
+	},
+	
+	{
+		"uid": 53,
+                "name": "grass_far",
+		"parent": 44,
+		"position": [ -69.39516,-9.050278,269.8206 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_mat",
+		"mesh": "grass_far"
+	},
+	
+	{
+		"uid": 54,
+                "name": "road",
+		"parent": 43,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 55,
+                "name": "r0",
+		"parent": 54,
+		"position": [ -160.0619,-1.831421,-37.43155 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r0"
+	},
+	
+	{
+		"uid": 56,
+                "name": "r1",
+		"parent": 54,
+		"position": [ -342.1756,-7.242984,66.34995 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r1"
+	},
+	
+	{
+		"uid": 57,
+                "name": "r2",
+		"parent": 54,
+		"position": [ -378.6247,-15.53198,386.0119 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r2"
+	},
+	
+	{
+		"uid": 58,
+                "name": "r3",
+		"parent": 54,
+		"position": [ -209.416,-17.24382,509.004 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r3"
+	},
+	
+	{
+		"uid": 59,
+                "name": "r4",
+		"parent": 54,
+		"position": [ 48.92202,-12.58066,372.5908 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r4"
+	},
+	
+	{
+		"uid": 60,
+                "name": "r5",
+		"parent": 54,
+		"position": [ 216.2863,-2.928204,131.8071 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r5"
+	},
+	
+	{
+		"uid": 61,
+                "name": "r6",
+		"parent": 54,
+		"position": [ 297.6724,8.612248,-208.2518 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r6"
+	},
+	
+	{
+		"uid": 62,
+                "name": "r7",
+		"parent": 54,
+		"position": [ 260.2702,19.76583,-500.0086 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r7"
+	},
+	
+	{
+		"uid": 63,
+                "name": "r8",
+		"parent": 54,
+		"position": [ 215.6107,14.75927,-352.5948 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r8"
+	},
+	
+	{
+		"uid": 64,
+                "name": "r9",
+		"parent": 54,
+		"position": [ 113.1867,4.309496,-76.71254 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_mat",
+		"mesh": "r9"
+	},
+	
+	{
+		"uid": 65,
+                "name": "sky",
+		"parent": 1,
+                "position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 66,
+                "name": "clouds",
+		"parent": 65,
+		"position": [ -61.99988,-18.2227,-91 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "clouds_mat",
+		"mesh": "clouds"
+	},
+	
+	{
+		"uid": 67,
+                "name": "horizon",
+		"parent": 65,
+		"position": [ -68.10229,5.994133,-89.53821 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "horizon_mat",
+		"mesh": "horizon"
+	},
+	
+	{
+		"uid": 68,
+                "name": "tiles",
+		"parent": 1,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 69,
+                "name": "grass_tile",
+		"parent": 68,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "grass_tile_mat",
+		"mesh": "grass_tile"
+	},
+	
+	{
+		"uid": 70,
+                "name": "trees_tile",
+		"parent": 68,
+		"position": [ -25.02264,13.48471,-61.50755 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "trees_tile_mat",
+		"mesh": "trees_tile"
+	},
+	
+	{
+		"uid": 71,
+                "name": "tiles_lightmap",
+		"parent": 1,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ]
+	},
+	
+	{
+		"uid": 72,
+                "name": "path_tile",
+		"parent": 71,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "path_tile_mat",
+		"mesh": "path_tile"
+	},
+	
+	{
+		"uid": 73,
+                "name": "road_tile",
+		"parent": 71,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "road_tile_mat",
+		"mesh": "road_tile"
+	},
+	
+	{
+		"uid": 74,
+                "name": "track_tile",
+		"parent": 71,
+		"position": [ 0,0,0 ],
+		"rotation": [ 0,0,0 ],
+		"renderer": "track_tile_mat",
+		"mesh": "track_tile"
+	}
+
+]
+}
+
+
+
+
