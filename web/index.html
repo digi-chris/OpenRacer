@@ -19,10 +19,124 @@
 <html>
     <head>
         <title>OpenRacer</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
+            canvas {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .mouseStart {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin-left: -25px;
+                margin-top: -25px;
+                background-color: rgba(1,1,1,0.5);
+                border-radius: 25px 25px 25px 25px;
+                z-index: 1000;
+            }
+            
+            .dash-tc-off {
+                background-image: url('images/dash/tc-off.png');
+            }
+            
+            .dash-tc-on {
+                background-image: url('images/dash/tc-on.png');
+            }
+
+            .dash-abs-off {
+                background-image: url('images/dash/abs-off.png');
+            }
+            
+            .dash-abs-on {
+                background-image: url('images/dash/abs-on.png');
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <script>
+            var RACER = {};
+        </script>
+        <script src="js/Helpers.js"></script>
+        <script src="js/three/three.js"></script>
+        <!--<script src="js/three.shaderutils.js"></script>-->
+        <script src="js/stats.js"></script>
+        <script src="js/loaders/SceneLoader.js"></script>
+        <script src="js/loaders/SceneLoader.js"></script>
+        <script src="js/loaders/ctm/lzma.js"></script>
+        <script src="js/loaders/ctm/ctm.js"></script>
+        <script src="js/loaders/ctm/CTMLoader.js"></script>
+        <script src="js/loaders/ctm/CTMWorker.js"></script>
+        <script src="js/MaterialLibrary.js"></script>
+        <script src="js/TrackLoader.js"></script>
+        <script src="js/Scene.js"></script>
+        <script src="js/Car.js"></script>
+        <script src="js/Engine.js"></script>
+        <script src="js/Wheel.js"></script>
+        <script src="js/postprocessing/EffectComposer.js"></script>
+        <script src="js/postprocessing/RenderPass.js"></script>
+        <script src="js/postprocessing/ShaderPass.js"></script>
+        <script src="js/postprocessing/BokehPass.js"></script>
+        <script src="js/shaders/BokehShader.js"></script>
+        <script src="js/postprocessing/BloomPass.js"></script>
+        <script src="js/postprocessing/MaskPass.js"></script>
+        <script src="js/shaders/CopyShader.js"></script>
+        <script src="js/shaders/ColorCorrectionShader.js"></script>
+        <script src="js/shaders/DOFMipMapShader.js"></script>
+        <script src="js/shaders/SSAOShader.js"></script>
+        <script src="js/shaders/FXAAShader.js"></script>
+        <script src="js/shaders/VignetteShader.js"></script>
+        <script src="js/controls.js"></script>
+        
+        <script>
+            var clock = new THREE.Clock();
+            var s = new RACER.Scene();
+            s.init();
+            initialiseMaterials();
+            
+            var car;
+            function trackLoaded() {
+                car = new RACER.Car({
+                    wheelbase: 3.3,
+                    front_track: 1.8,
+                    rear_track: 1.8,
+                    tire_diameter: 0.67564,
+                    mass: 1476,
+                    weight_distribution: 0.593,
+                    width: 1.86,
+                    height: 1.295,
+                    length: 4.813
+                });
+                
+                //loadCTM("cars/camaro/camaro.json");
+            }
+            
+            function onEnterFrame() {
+                if(car) {
+                    //console.log(car);
+                    car.update(clock.getDelta());
+                }
+            }
+            
+            var dash_tc;
+            var dash_abs;
+            
+            setTimeout(function() {
+                dash_tc = document.getElementById("dash-tc");
+                dash_abs = document.getElementById("dash-abs");
+            }, 1000);
+            
+            loadTrack(trackLoaded);
+        </script>
+        <div id="debugOut" style="position: absolute; top: 10px; left: 10px; z-index: 1000; color: #ffffff; font-family: Arial;"></div>
+        <div id="dashBoard" style="position: absolute; top: 100%; width: 100%; height: 34px; margin-top: -34px; text-align: right;">
+            <div id="dash-abs" class="dash-abs-off" style="width: 33px; height: 32px; float: right;"></div>
+            <div id="dash-tc" class="dash-tc-off" style="width: 33px; height: 32px; float: right;"></div>
+        </div>
     </body>
 </html>
