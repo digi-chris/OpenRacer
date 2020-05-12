@@ -189,7 +189,7 @@ OpenRacer.Car = function( parameters, domElement ) {
         wFrontLeft.add(wFrontL);
         var wFL = new THREE.Object3D();
         wFL.add(wFrontLeft);
-        tobj.wheels.push(new RACER.Wheel({ name: "FL", object: wFL, diameter: tobj.tire_diameter, car: tobj, mass: frontMass / 2, spring: frontSpring }));
+        tobj.wheels.push(new OpenRacer.Wheel({ name: "FL", object: wFL, diameter: tobj.tire_diameter, car: tobj, mass: frontMass / 2, spring: frontSpring }));
 
         var wFrontR = new THREE.Object3D();
         wFrontR.add(mesh.clone());
@@ -197,19 +197,19 @@ OpenRacer.Car = function( parameters, domElement ) {
         wFrontRight.add(wFrontR);
         var wFR = new THREE.Object3D();
         wFR.add(wFrontRight);
-        tobj.wheels.push(new RACER.Wheel({ name: "FR", object: wFR, diameter: tobj.tire_diameter, right: true, car: tobj, mass: frontMass / 2, spring: frontSpring }));
+        tobj.wheels.push(new OpenRacer.Wheel({ name: "FR", object: wFR, diameter: tobj.tire_diameter, right: true, car: tobj, mass: frontMass / 2, spring: frontSpring }));
 
         // NOTE: This appears to the be the rear-right wheel?
         wRearLeft.add(mesh.clone());
         //wRearLeft.children[0].rotation.y = -Math.PI;
         var wRL = new THREE.Object3D();
         wRL.add(wRearLeft);
-        tobj.wheels.push(new RACER.Wheel({ name: "RL", object: wRL, diameter: tobj.tire_diameter, car: tobj, mass: rearMass / 2, spring: rearSpring }));
+        tobj.wheels.push(new OpenRacer.Wheel({ name: "RL", object: wRL, diameter: tobj.tire_diameter, car: tobj, mass: rearMass / 2, spring: rearSpring }));
 
         wRearRight.add(mesh);
         var wRR = new THREE.Object3D();
         wRR.add(wRearRight);
-        tobj.wheels.push(new RACER.Wheel({ name: "RR", object: wRR, diameter: tobj.tire_diameter, right: true, car: tobj, mass: rearMass / 2, spring: rearSpring }));
+        tobj.wheels.push(new OpenRacer.Wheel({ name: "RR", object: wRR, diameter: tobj.tire_diameter, right: true, car: tobj, mass: rearMass / 2, spring: rearSpring }));
 
         scene.add( wFL );
         scene.add( wFR );
@@ -230,7 +230,7 @@ OpenRacer.Car = function( parameters, domElement ) {
     };
         
     this.update = function( delta, showDebug ) {
-        gamepadUpdate();
+        //gamepadUpdate();
         
         if(this.reset) {
             for(var i = 0; i < this.wheels.length; i++) {
@@ -273,7 +273,7 @@ OpenRacer.Car = function( parameters, domElement ) {
         
         if(this.turnDir === 0) {
             //this.turnAmt -= this.turnAmt * (delta / 0.5);
-            if(!mouseDown && !usingGamepad)
+            if(!mouseDown /* && !usingGamepad */)
                 this.turnAngle -= this.turnAngle * 0.25;
         } else if(this.turnDir < 0 && this.turnAngle > 0) {
             this.turnAngle += this.turnDir * ((tSpeed * 3) / Math.max(this.wheels[0].getWheelVelocity() / 4, 1)) * delta;
@@ -435,9 +435,9 @@ OpenRacer.Car = function( parameters, domElement ) {
             }
         }
         
-        if(telemetry) {
-            telemetry.update();
-        }
+        //if(telemetry) {
+        //    telemetry.update();
+        //}
     };
 
     
