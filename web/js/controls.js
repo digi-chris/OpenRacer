@@ -1,4 +1,5 @@
 var mouseDown = false;
+var usingGamepad = false;
 var mdX = 0;
 var mdY = 0;
 var mX = 0;
@@ -50,3 +51,32 @@ window.onmousemove = function(e) {
         car.turnAngle = car.maxTurn * Math.pow(xDiff, 2) * getSign(xDiff);
     }
 };
+
+function gamepadUpdate() {
+    var gpad = navigator.getGamepads()[0];
+    //console.log(gpad);
+    if(gpad) {
+        var stickMovement = Math.abs(gpad.axes[0]);
+        if(stickMovement > 0.1) {
+            stickMovement = (stickMovement - 0.1) * (1 / 0.9);
+        }// else if(stickMovement < 0.1) {
+        //    stickMovement = (stickMovement + 0.1) * (1 / 0.9);
+        //}
+        car.turnAngle -= (car.turnAngle - (car.maxTurn * Math.pow(gpad.axes[0], 4) * getSign(gpad.axes[0]))) / 3;
+        car.throttle = gpad.buttons[7].value;
+        car.brakePedal = gpad.buttons[6].value;
+                //console.log(gpad.buttons[6]);
+        /*
+        if(gpad.axes[1] < 0) {
+            car.throttle = -gpad.axes[1];
+            car.brakePedal = 0;
+        } else {
+            car.brakePedal = gpad.axes[1];
+            car.throttle = 0;
+        }
+        */
+        usingGamepad = true;
+    } else {
+        usingGamepad = false;
+    }
+}

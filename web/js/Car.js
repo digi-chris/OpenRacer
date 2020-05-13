@@ -230,7 +230,7 @@ OpenRacer.Car = function( parameters, domElement ) {
     };
         
     this.update = function( delta, showDebug ) {
-        //gamepadUpdate();
+        gamepadUpdate();
         
         if(this.reset) {
             for(var i = 0; i < this.wheels.length; i++) {
@@ -273,7 +273,7 @@ OpenRacer.Car = function( parameters, domElement ) {
         
         if(this.turnDir === 0) {
             //this.turnAmt -= this.turnAmt * (delta / 0.5);
-            if(!mouseDown /* && !usingGamepad */)
+            if(!mouseDown && !usingGamepad)
                 this.turnAngle -= this.turnAngle * 0.25;
         } else if(this.turnDir < 0 && this.turnAngle > 0) {
             this.turnAngle += this.turnDir * ((tSpeed * 3) / Math.max(this.wheels[0].getWheelVelocity() / 4, 1)) * delta;
@@ -435,9 +435,9 @@ OpenRacer.Car = function( parameters, domElement ) {
             }
         }
         
-        //if(telemetry) {
-        //    telemetry.update();
-        //}
+        if(telemetry) {
+            telemetry.update();
+        }
     };
 
     
