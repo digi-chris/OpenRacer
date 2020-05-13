@@ -63,6 +63,13 @@
             var RACER = {};
             var OpenRacer =  {};
         </script>
+        <div id="debugOut" style="position: absolute; top: 10px; left: 10px; z-index: 1000; color: #ffffff; font-family: Arial;"></div>
+        <div id="dashBoard" style="position: absolute; top: 100%; width: 100%; height: 34px; margin-top: -34px; text-align: right; z-index: 1000;">
+            <div id="dash-abs" class="dash-abs-off" style="width: 33px; height: 32px; float: right;"></div>
+            <div id="dash-tc" class="dash-tc-off" style="width: 33px; height: 32px; float: right;"></div>
+        </div>
+        <div id="telemetry" style="position: absolute; top: 50%; left: 0px; width: 100%; height: 50%; visibility: visible;">
+        </div>
         <script src="js/Helpers.js"></script>
         <script src="js/three/three.js"></script>
         <!--<script src="js/three.shaderutils.js"></script>-->
@@ -96,6 +103,8 @@
         <script>
             var clock = new THREE.Clock();
             var s = new RACER.Scene();
+            var telemetry;
+            
             s.init();
             initialiseMaterials();
             
@@ -113,13 +122,16 @@
                     length: 4.813
                 });
                 
+                telemetry = new OpenRacer.Telemetry({car: car, domElement: document.getElementById("telemetry")});
                 //loadCTM("cars/camaro/camaro.json");
             }
             
             function onEnterFrame() {
                 if(car) {
                     //console.log(car);
-                    car.update(clock.getDelta());
+                    var d = clock.getDelta();
+                    //car.update(d);
+                    car.update(d, true);
                 }
             }
             
@@ -133,10 +145,5 @@
             
             loadTrack(trackLoaded);
         </script>
-        <div id="debugOut" style="position: absolute; top: 10px; left: 10px; z-index: 1000; color: #ffffff; font-family: Arial;"></div>
-        <div id="dashBoard" style="position: absolute; top: 100%; width: 100%; height: 34px; margin-top: -34px; text-align: right;">
-            <div id="dash-abs" class="dash-abs-off" style="width: 33px; height: 32px; float: right;"></div>
-            <div id="dash-tc" class="dash-tc-off" style="width: 33px; height: 32px; float: right;"></div>
-        </div>
     </body>
 </html>
